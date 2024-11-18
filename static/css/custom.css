@@ -1,0 +1,22 @@
+h1.title::before { content: "❆"; }
+.main {
+  line-height: 1.75;
+}
+.archive {
+  max-width: none;
+  width: 100%;
+}
+.archive > ul > li {
+  list-style: none;
+}
+.cn .archive > ul > li {
+  display: inline-block;
+  margin-right: 1em;
+}
+.main h2 {
+  line-height: 1.25;
+}
+.main h1, .main h2 {
+  text-align: center;
+  margin: 2em 0 1em;
+}
