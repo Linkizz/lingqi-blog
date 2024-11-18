@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on Lingqi Zeng | 曾令麒</title>
+    <link>//localhost:4321/</link>
+    <description>Recent content in Home on Lingqi Zeng | 曾令麒</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Mon, 18 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:4321/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>决策树</title>
+      <link>//localhost:4321/blog/decision-tree/</link>
+      <pubDate>Mon, 18 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>//localhost:4321/blog/decision-tree/</guid>
+      <description>&lt;h2 id=&#34;决策树定义&#34;&gt;决策树定义&lt;/h2&gt;&#xA;&lt;p&gt;决策树模型由一系列的问题构成，通过问题的回答结果不断地对输入数据进行区域划分，并以树状结构展示数据所在的区域，树的每一个叶子结点就是一个区域。因此，如果我们根据训练数据构建出一颗决策树，也就是划分出不同特征值组合对应的区域，那么给出新的数据，我们只要根据该决策树的规则，找出新数据所在的区域即可。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>About</title>
+      <link>//localhost:4321/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:4321/about/</guid>
+      <description>&lt;p&gt;I immediately loved the design of &lt;a href=&#34;https://pagedjs.org&#34;&gt;the paged.js website&lt;/a&gt; when I first saw it a couple of years ago.&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; I have published a few books before, so the crop marks on the website caught my attention first, which gave me a familiar feel of printed books. The second thing that I appreciated was the rotated floral heart bullet behind the title of each page, i.e.,&lt;/p&gt;&#xA;&lt;div style=&#34;font-size:9em;text-align:center;color:#ccc;&#34;&gt;❧&lt;/div&gt;&#xD;&#xA;&lt;p&gt;So I wrote a Hugo theme that mimics the style of the paged.js website. I tried not to look at its HTML/CSS source code, but I had to read the source to figure out:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Search</title>
+      <link>//localhost:4321/search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:4321/search/</guid>
+      <description>&lt;p&gt;The searching is performed via fuse.js. For the search keywords, white spaces act as the &lt;code&gt;AND&lt;/code&gt; operator, and &lt;code&gt;|&lt;/code&gt; acts as the &lt;code&gt;OR&lt;/code&gt; operator. To match an exact phrase, double quote it. For example, &lt;code&gt;R Markdown&lt;/code&gt; matches articles that contain both &lt;code&gt;R&lt;/code&gt; and &lt;code&gt;Markdown&lt;/code&gt;, &lt;code&gt;R | Markdown&lt;/code&gt; matches articles that contain &lt;code&gt;R&lt;/code&gt; or &lt;code&gt;Markdown&lt;/code&gt;, and &lt;code&gt;&amp;quot;R Markdown&amp;quot;&lt;/code&gt; matches articles that contain the whole phrase &lt;code&gt;R Markdown&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;style type=&#34;text/css&#34;&gt;&#xD;&#xA;.main {&#xD;&#xA;  width: 100%;&#xD;&#xA;}&#xD;&#xA;#search-input {&#xD;&#xA;  width: 100%;&#xD;&#xA;  font-size: 1.2em;&#xD;&#xA;  padding: .5em;&#xD;&#xA;}&#xD;&#xA;.search-results b {&#xD;&#xA;  background-color: yellow;&#xD;&#xA;}&#xD;&#xA;.search-preview {&#xD;&#xA;  margin-left: 2em;&#xD;&#xA;}&#xD;&#xA;.single .main a, .single .main h2 {&#xD;&#xA;  border-bottom: none;&#xD;&#xA;}&#xD;&#xA;&lt;/style&gt;&#xD;&#xA;&lt;input type=&#34;search&#34; id=&#34;search-input&#34;&gt;&#xD;&#xA;&lt;div class=&#34;search-results&#34;&gt;&#xD;&#xA;&lt;section&gt;&#xD;&#xA;&lt;h2 class=&#34;toc-line&#34;&gt;&lt;a target=&#34;_blank&#34;&gt;&lt;/a&gt;&lt;span class=&#34;dots&#34;&gt;&lt;/span&gt;&lt;span class=&#34;page-num small&#34;&gt;&lt;/span&gt;&lt;/h2&gt;&#xD;&#xA;&lt;div class=&#34;search-preview&#34;&gt;&lt;/div&gt;&#xD;&#xA;&lt;/section&gt;&#xD;&#xA;&lt;/div&gt;&#xD;&#xA;&lt;script src=&#34;https://cdn.jsdelivr.net/npm/fuse.js@6.6.2&#34; defer&gt;&lt;/script&gt;&#xD;&#xA;&lt;script src=&#34;https://cdn.jsdelivr.net/npm/@xiee/utils/js/fuse-search.min.js&#34; defer&gt;&lt;/script&gt;</description>
+    </item>
+  </channel>
+</rss>

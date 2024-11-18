@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tutorial on Lingqi Zeng | 曾令麒</title>
+    <link>//localhost:4321/tags/tutorial/</link>
+    <description>Recent content in Tutorial on Lingqi Zeng | 曾令麒</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <atom:link href="//localhost:4321/tags/tutorial/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Getting started</title>
+      <link>//localhost:4321/docs/02-get-started/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:4321/docs/02-get-started/</guid>
+      <description>&lt;p&gt;There are two ways to get started with this theme, depending on whether you use R or Hugo.&lt;/p&gt;&#xA;&lt;h2 id=&#34;r-users&#34;&gt;R users&lt;/h2&gt;&#xA;&lt;p&gt;If you use R, the easiest way to get started is to install &lt;a href=&#34;https://github.com/rstudio/blogdown&#34;&gt;the &lt;strong&gt;blogdown&lt;/strong&gt; package&lt;/a&gt;, and create a new site with this theme:&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;install.packages(&#39;blogdown&#39;)&#xA;blogdown::new_site(theme = &#39;yihui/hugo-paged&#39;)&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;Or you can &lt;a href=&#34;https://bookdown.org/yihui/blogdown/a-quick-example.html&#34;&gt;create a new RStudio &lt;strong&gt;blogdown&lt;/strong&gt; project&lt;/a&gt; (if you use RStudio) with the &lt;code&gt;yihui/hugo-paged&lt;/code&gt; theme.&lt;/p&gt;&#xA;&lt;h2 id=&#34;hugo-users&#34;&gt;Hugo users&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Create a new Hugo site with &lt;code&gt;hugo new&lt;/code&gt;.&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/yihui/hugo-paged/archive/refs/heads/main.zip&#34;&gt;Download this theme from Github&lt;/a&gt; and unzip it to the &lt;code&gt;themes/hugo-paged&lt;/code&gt; directory.&lt;/li&gt;&#xA;&lt;li&gt;Move all content of the &lt;code&gt;exampleSite&lt;/code&gt; directory in this theme to the root directory of the new site.&lt;/li&gt;&#xA;&lt;li&gt;Run &lt;code&gt;hugo server&lt;/code&gt; and start playing with the new site.&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>Customization</title>
+      <link>//localhost:4321/docs/03-customization/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:4321/docs/03-customization/</guid>
+      <description>&lt;p&gt;The more you know, the less real work you will get done. You have been warned.&lt;/p&gt;&#xA;&lt;h2 id=&#34;site-config&#34;&gt;Site config&lt;/h2&gt;&#xA;&lt;p&gt;In your site config file (&lt;code&gt;hugo.yaml&lt;/code&gt; or &lt;code&gt;config.yaml&lt;/code&gt;), you can customize some options such as the top menu or footer, which should be straightforward to understand if you take a look at the &lt;code&gt;exampleSite&lt;/code&gt;&amp;rsquo;s config file.&lt;/p&gt;&#xA;&lt;p&gt;If you want to add a logo to the left of the top navigation bar, you can use the &lt;code&gt;logo&lt;/code&gt; parameter, e.g.,&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

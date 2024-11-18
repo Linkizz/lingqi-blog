@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=4321&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>决策树 - Lingqi Zeng | 曾令麒</title>
+    <meta property="og:title" content="决策树 - Lingqi Zeng | 曾令麒">
+    
+    <meta name="twitter:card" content="summary">
+    
+      
+      <meta property="description" content="决策树模型由一系列的问题构成，通过问题的回答结果不断地对输入数据进行区域划分，并以树状结构展示数据所在的区域，树的每一个叶子结点就是一个区域。因此，如果我们根据训练数据构建出一颗决策树，也就是划分出不同特征值组合对应的区域，那么给出新的数据，我们只要根据该决策树的规则，找出新数据所在的区域即可。
+[&amp;hellip;] 图 1: 一个简单的决策树[&amp;hellip;] 先介绍回归树，它表示我们要求的 &amp;hellip;">
+      <meta property="og:description" content="决策树模型由一系列的问题构成，通过问题的回答结果不断地对输入数据进行区域划分，并以树状结构展示数据所在的区域，树的每一个叶子结点就是一个区域。因此，如果我们根据训练数据构建出一颗决策树，也就是划分出不同特征值组合对应的区域，那么给出新的数据，我们只要根据该决策树的规则，找出新数据所在的区域即可。
+[&amp;hellip;] 图 1: 一个简单的决策树[&amp;hellip;] 先介绍回归树，它表示我们要求的 &amp;hellip;">
+      
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <link rel="stylesheet" href="/css/fonts.css">
+    
+    <link rel="stylesheet" href="/css/custom.css">
+    
+    <link rel="stylesheet" href="https://indestructibletype.com/fonts/Jost.css">
+
+  </head>
+
+  
+  
+  
+  <body class="single blog">
+    <div class="crop-h"></div><div class="crop-v"></div><div class="crop-c"></div>
+    <nav class="nav-top small">
+    <div class="logo">
+    
+      <a href="/">
+      
+      Lingqi Zeng
+      
+      </a>
+    
+    </div>
+    <div class="menu"><span><a href="/">Home</a></span>
+      <span><a href="/about/">About</a></span>
+      <span class="active"><a href="/blog/">Blog</a></span>
+      <span><a href="/search/">Search</a></span>
+      
+    </div>
+    </nav>
+
+<div class="article-meta">
+<h1 class="title">决策树</h1>
+
+<h3 class="meta-line">
+  <span>
+
+<span class="author">Lingqi Zeng</span>
+
+
+
+
+
+
+<span class="date">2024-11-18</span>
+
+
+</span>
+  <span class="term">
+  
+  
+  </span>
+</h3>
+</div>
+
+<div class="main">
+
+
+
+
+
+<nav id="TableOfContents">
+      <ul>
+        <li><a href="#决策树定义">决策树定义</a></li>
+        <li><a href="#cart决策树">CART决策树</a></li>
+        <li><a href="#cart树学习">CART树学习</a></li>
+      </ul>
+</nav>
+
+
+
+
+<h2 id="决策树定义">决策树定义</h2>
+<p>决策树模型由一系列的问题构成，通过问题的回答结果不断地对输入数据进行区域划分，并以树状结构展示数据所在的区域，树的每一个叶子结点就是一个区域。因此，如果我们根据训练数据构建出一颗决策树，也就是划分出不同特征值组合对应的区域，那么给出新的数据，我们只要根据该决策树的规则，找出新数据所在的区域即可。</p>
+<div class="figure" style="text-align: center">
+<img src="images/decision tree.png" alt="一个简单的决策树"/>
+<p class="caption">
+<span id="fig:search"></span>图 1: 一个简单的决策树
+</p>
+</div>
+<h2 id="cart决策树">CART决策树</h2>
+<p>先介绍回归树，它表示我们要求的输出结果是一个实数值。CART树假设决策树都是二叉树，在每一个结点，对于连续型特征，则将其与一个阈值进行比较，小于阈值划为左子树，大于则划为右子树；对于离散型特征，则将结点划分为属于或不属于该类别。</p>
+<p>一个回归树可以表示为</p>
+<p><code>$$f(\mathbf{x}; \boldsymbol{\theta})=\sum_{i=1}^{I}w_i \mathbb{I}(\mathbf{x} \in R_i)$$</code></p>
+<p>这里，<code>$R_i$</code>表示第<code>$i$</code>个叶结点所在的区域，<code>$w_i$</code>表示该结点的输出值，是对应区域所有实例输出的均值，</p>
+<p><code>$$w_i = \frac{\sum_{n=1}^{N}y_n \mathbb{I}(\mathbf{x} \in R_i)}{\mathbb{I}(\sum_{n=1}^{N}\mathbf{x} \in R_i)},$$</code></p>
+<p><code>$\boldsymbol{\theta}=\{(R_i,w_i): i = 1:I\}$</code>是我们需要学习的参数，表示树的结构，各个划分区域的输出值，<code>$I$</code>表示结点的数量。</p>
+<p>对于分类树，将输出均值改为输出各类别的概率分布。</p>
+<h2 id="cart树学习">CART树学习</h2>
+<p>为了学习树的结构，对区域进行划分，我们需要最小化损失函数：</p>
+<p><code>$$\mathcal{L}(\boldsymbol{\theta})=\sum_{n=1}^{N}\ell(y_n, f(\mathbf{x}_n; \boldsymbol{\theta}))=\sum_{n=1}^{N}\sum_{\mathbf{x}_n \in R_i}\ell(y_n, w_i)$$</code></p>
+<p>从最后一个求和号可以看到，这需要我们学习一个树的结构，因此该损失函数不可导，难以优化。实际上这是一个NP-complete问题，因此通常采用贪心算法，一个结点一个结点进行优化。</p>
+<p>假设我们现在处于结点<code>$i$</code>，令<code>$\mathcal{D}=\{(\mathbf{x}_n, y_n) \in N_i\}$</code>表示结点<code>$i$</code>这时候的数据，现在考虑如何对结点进行划分能够使得损失最小。</p>
+<p>根据上一节所说的，如果第<code>$j$</code>个特征是连续值，可以通过将该值与一个阈值$t$进行比较来对结点$i$进行划分。那么左右子树的数据分别为<code>$\mathcal{D}_{i}^{L}(j,t)=\{(\mathbf{x}_n, y_n) \in N_i: x_{n,j} \leq t\}$</code>，<code>$\mathcal{D}_{i}^{R}(j,t)=\{(\mathbf{x}_n, y_n) \in N_i: x_{n,j} &gt; t\}$</code>。</p>
+<p>如果第<code>$j$</code>个特征是离散值，有<code>$K_j$</code>种类别，那么将检查该特征属于某个类或者不属于该类（即是或否，因为CART树假设均为二叉树）。因此，左右子树的数据分别为<code>$\mathcal{D}_{i}^{L}(j,t)=\{(\mathbf{x}_n, y_n) \in N_i: x_{n,j} = t\}$</code>，<code>$\mathcal{D}_{i}^{R}(j,t)=\{(\mathbf{x}_n, y_n) \in N_i: x_{n,j} \neq t\}$</code>。如果不假设二叉树，对类别进行多种划分，则可能会出现data fragmentation现象，在某些子树中只有很少的数据，分得太细，容易导致过拟合。</p>
+<p>根据上述步骤可以计算在结点<code>$i$</code>根据第<code>$j$</code>个特征和阈值<code>$t$</code>进行划分的左右子树为<code>$\mathcal{D}_{i}^{L}(j,t)$</code>和<code>$\mathcal{D}_{i}^{R}(j,t)$</code>，然后我们根据以下方式选择最佳的划分特征<code>$j_i$</code>和划分阈值<code>$t_i$</code>：</p>
+<p><code>$$(j_i, t_i) = \arg \min_{j} \min_{t} \frac{|\mathcal{D}_{i}^{L}(j,t)|}{|\mathcal{D}_{i}|}c(\mathcal{D}_{i}^{L}(j,t)) + \frac{|\mathcal{D}_{i}^{R}(j,t)|}{|\mathcal{D}_{i}|}c(\mathcal{D}_{i}^{R}(j,t))$$</code></p>
+<p>对于回归问题，在结点<code>$i$</code>划分的损失可以使用均方误差MSE：</p>
+<p><code>$$c(\mathcal{D}_{i})=\frac{1}{|\mathcal{D_i}|} \sum_{n \in N_i}(y_n - w_i)^2$$</code></p>
+<p>对于分类问题，计算基尼指数（Gini index）来衡量损失：</p>
+<p><code>$$\text{Gini}(p)=\sum_{c=1}^{C}p_c(1-p_c)=1-\sum_{c=1}^{C}p_c^2, \\ \text{Gini}(\mathcal{D_{i}})=1-\sum_{c=1}^{C}(\frac{|\mathcal{D_{i,c}}|}{|\mathcal{D_{i}}|})^2, \\ \text{Gini}(\mathcal{D_{i}}, A)=\frac{|\mathcal{D}_{i}^{L}|}{|\mathcal{D_{i}}|} \text{Gini}(\mathcal{D}_{i}^{L}) + \frac{|\mathcal{D}_{i}^{R}|}{|\mathcal{D_{i}}|} \text{Gini}(\mathcal{D}_{i}^{R})$$</code></p>
+<p>其中，<code>$p_c$</code>是样本属于第<code>$c$</code>类的概率，<code>$\mathcal{D_{i,c}}$</code>是数据集<code>$\mathcal{D_{i}}$</code>中属于第<code>$c$</code>类的样本。</p>
+<p>直观上，Gini指数反映了从数据集中随机抽取两个样本，其类别不一致的概率，反映了数据集的不确定性。因此，Gini指数越小，数据集纯度越高，不确定性越低。在每次划分时，选择使得划分后的Gini指数最小的特征。</p>
+
+
+
+<nav class="post-nav fullwidth kai">
+  <span class="nav-prev">&larr; &empty;</span>
+  <span class="nav-next">&empty; &rarr;</span>
+</nav>
+
+
+</div>
+  <footer class="small">
+  <script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/fix-toc.min.js" defer></script>
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/center-img.min.js" defer></script>
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/alt-title.min.js" defer></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/math-code.min.js" defer></script>
+<script src="//cdn.jsdelivr.net/combine/npm/katex/dist/katex.min.js,npm/katex/dist/contrib/auto-render.min.js,npm/@xiee/utils/js/render-katex.js" defer></script>
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/key-buttons.min.js" defer></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@xiee/utils/css/key-buttons.min.css">
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/heading-anchor.min.js" defer></script>
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/fullwidth.min.js" defer></script>
+
+  
+  
+  <hr/>
+  
+  <p class="nav-bottom">
+    <span>© <a href="https://github.com/Linkizz">Lingqi Zeng</a> 2024</span>
+    <span class="menu-bottom">
+<a href="/categories/">Categories</a> <a href="/tags/">Tags</a>
+
+<a href="/blog/index.xml" type="application/rss+xml" title="RSS feed">Subscribe</a>
+
+<a href="#">Back to Top</a>
+
+</span>
+  </p>
+  
+  </footer>
+  </body>
+</html>
+
