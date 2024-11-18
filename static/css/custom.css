@@ -9,7 +9,7 @@ h1.title::before { content: "❆"; }
 .archive > ul > li {
   list-style: none;
 }
-.cn .archive > ul > li {
+.blog .archive > ul > li {
   display: inline-block;
   margin-right: 1em;
 }
