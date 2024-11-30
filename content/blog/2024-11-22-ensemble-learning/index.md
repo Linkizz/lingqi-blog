@@ -3,7 +3,8 @@ title: 集成学习
 author: Lingqi Zeng
 date: '2024-11-22'
 slug: ensemble-learning
-categories: []
+categories:
+  - Machine Learning
 tags: []
 ---
 
@@ -50,9 +51,9 @@ Boosting的理论基础是PAC(Probably Approximately Correct)学习框架，在P
 
 可以证明强可学习和弱可学习是等价的。而一般来说，找到一个弱学习算法比强学习算法要 容易很多，因此我们只需要找到弱学习算法，然后以某种策略将其不断增强提升为强学习算法。
 
-Boosting的训练过程为：首先训练一个基模型，然后根据基模型的效果，提高被误分类训练样本的权重，使其在下一个基模型训练时受到更多的关注，不断重复这个过程，最后将所有训练好的基模型进行组合。因此，boosting实际上是一个加性模型
+Boosting的训练过程为：首先训练一个基模型，然后根据基模型的效果，提高被误分类训练样本的权重，使其在下一个基模型训练时受到更多的关注，不断重复这个过程，最后将所有训练好的基模型进行组合。因此，boosting实际上是一个加法模型
 
-`$$f(\mathbf{x};\boldsymbol{\theta}) = \sum_{m \in \mathcal{M}}\beta_{m}F_{m}(\mathbf{x};\boldsymbol{\theta})$$`
+`$$f(\mathbf{x};\boldsymbol{\theta}) = \sum_{m=1}^{M}\beta_{m}F_{m}(\mathbf{x};\boldsymbol{\theta})$$`
 
 其中，`$F_m$`是第`$m$`个基模型，`$\beta_m$`是第`$m$`个基模型的权重，根据基模型的表现进行调整。
 
