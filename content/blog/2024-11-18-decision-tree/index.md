@@ -3,7 +3,8 @@ title: 决策树
 author: Lingqi Zeng
 date: '2024-11-18'
 slug: decision-tree
-categories: []
+categories:
+  - Machine Learning
 tags: []
 ---
 
