@@ -1,5 +1,5 @@
 ---
-title: XGBoost
+title: 'XGBoost'
 author: Lingqi Zeng
 date: '2024-11-30'
 slug: xgboost

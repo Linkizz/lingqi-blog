@@ -1,5 +1,5 @@
 ---
-title: 集成学习
+title: '集成学习'
 author: Lingqi Zeng
 date: '2024-11-22'
 slug: ensemble-learning

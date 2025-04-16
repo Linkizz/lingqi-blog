@@ -1,5 +1,5 @@
 ---
-title: 梯度提升树
+title: '梯度提升树'
 author: Lingqi Zeng
 date: '2024-11-28'
 slug: gradient-boosting-decision-tree
