@@ -82,7 +82,7 @@ state value可以通过求解[Bellman equation](/blog/rl-2-bellman-equation/)得
 
 - 迭代求解：
 
-`$$\mathbf{v}_{\pi_k}^{(j+1)}=\mathbf{r}_{\pi_k} + \gamma \mathbf{P}_{\pi_k} \mathbf{v}_{\pi_k}^{j}, \quad j=0,1,2,\cdots$$`
+`$$\mathbf{v}_{\pi_k}^{(j+1)}=\mathbf{r}_{\pi_k} + \gamma \mathbf{P}_{\pi_k} \mathbf{v}_{\pi_k}^{(j)}, \quad j=0,1,2,\cdots$$`
 
 也就是说，策略迭代算法是一个包含另一个求解Bellman equation迭代算法的迭代算法。
 
@@ -98,13 +98,15 @@ state value可以通过求解[Bellman equation](/blog/rl-2-bellman-equation/)得
 
 和值迭代算法一样，我们介绍策略迭代算法的elementwise form：
 
+- Policy evaluation
+
 `$\mathbf{v}_{\pi_k}^{(j+1)}=\mathbf{r}_{\pi_k} + \gamma \mathbf{P}_{\pi_k} \mathbf{v}_{\pi_k}^{(j)}$`的elementwise form为
 
 `$$v_{\pi_k}^{(j+1)}(s) = \sum_{a \in \mathcal{A}(s)} \pi_{k}(a|s) \left( \sum_{r \in \mathcal{R}(s,a)} p(r|s,a)r + \gamma \sum_{s' \in \mathcal{S}} p(s'|s,a)v_{\pi_k}^{(j)}(s') \right), \quad \forall s \in \mathcal{S}.$$`
 
 当`$j \rightarrow \infty$`或者`$j$`超过某个设定值或者`$\Vert v_{\pi_k}^{(j+1)}-v_{\pi_k}^{(j)} \Vert$`小于某个设定值时迭代停止。
 
-- Policy evaluation
+- Policy improvement
 
 `$\pi_{k+1}=\arg\max_{\pi}(\mathbf{r}_{\pi}+\gamma \mathbf{P}_{\pi}\mathbf{v}_{\pi_{k}})$`的elementwise form为
 
