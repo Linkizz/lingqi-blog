@@ -1,5 +1,5 @@
 ---
-title: '强化学习(3): 贝尔曼最优公式'
+title: '强化学习(3)：贝尔曼最优公式'
 author: Lingqi Zeng
 date: '2025-04-08'
 slug: rl-3-bellman-optimality-equation

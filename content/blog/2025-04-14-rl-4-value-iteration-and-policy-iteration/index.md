@@ -1,5 +1,5 @@
 ---
-title: '强化学习(4): 值迭代和策略迭代'
+title: '强化学习(4)：值迭代和策略迭代'
 author: Lingqi Zeng
 date: '2025-04-14'
 slug: rl-4-value-iteration-and-policy-iteration

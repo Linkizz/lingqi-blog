@@ -1,5 +1,5 @@
 ---
-title: '强化学习(1): 基础概念'
+title: '强化学习(1)：基础概念'
 author: Lingqi Zeng
 date: '2025-04-01'
 slug: rl-1-basic-concepts
@@ -95,7 +95,7 @@ Reward由agent当前的state和action决定，而不取决于下一步的state�
 
 ![trajectory](images/trajectory.png)
 
-**Trajectory:** 是一个state-action-reward chain: 
+**Trajectory:** 是一个state-action-reward chain：
 `$$s_1 \xrightarrow[r=0]{a_2} s_2 \xrightarrow[r=0]{a_3} s_5 \xrightarrow[r=0]{a_3} s_8 \xrightarrow[r=1]{a_2} s_9, $$`
 
 `$$s_1 \xrightarrow[r=0]{a_3} s_4 \xrightarrow[r=-1]{a_3} s_7 \xrightarrow[r=0]{a_2} s_8 \xrightarrow[r=+1]{a_2} s_9.$$`
@@ -130,15 +130,15 @@ Reward由agent当前的state和action决定，而不取决于下一步的state�
 
 马尔可夫决策过程(Markov Decision Process, MDP)是一个描述随机动力系统的通用框架，agent在与环境交互时也具有随机性，因此强化学习也可以使用MDP框架，它的主要成分有：
 
-- **集合(Sets):**
+- **集合(Sets)：**
   - **State Space:** 所有state的集合，记为`$\mathcal{S}$`。
   - **Action Space:** 某个state的action集合，记为`$\mathcal{A}(s),s \in \mathcal{S}$`。
   - **Reward Set:** 某个state执行某个action的reward，记为`$\mathcal{R}(s,a),s \in \mathcal{S}, a \in \mathcal{A}(s)$`。
-- **模型(Model):**
+- **模型(Model)：**
   - **State Transition Probability:** 在state `$s$`采取action `$a$`到达state `$s'$`的概率为`$p(s'|s,a)$`，需要满足`$\sum_{s' \in \mathcal{S}} p(s'|s,a)=1, \forall (s,a)$`。
   - **Reward Probability:** 在state `$s$`采取action `$a$`获得reward `$r$`的概率为`$p(r|s,a)$`，需要满足`$\sum_{r \in \mathcal{R}(s,a)} p(r|s,a)=1, \forall (s,a)$`。
-- **策略(policy):** 在state `$s$`采取action `$a$`的概率为`$\pi(a|s)$`，需要满足`$\sum_{a \in \mathcal{A}(s)} \pi(a|s)=1, \forall s \in \mathcal{S}$`。
-- **马尔可夫性(Markov Property):** 下一步的state和reward只与当前的state和action有关，即
+- **策略(policy)：** 在state `$s$`采取action `$a$`的概率为`$\pi(a|s)$`，需要满足`$\sum_{a \in \mathcal{A}(s)} \pi(a|s)=1, \forall s \in \mathcal{S}$`。
+- **马尔可夫性(Markov Property)：** 下一步的state和reward只与当前的state和action有关，即
 
 `$$p(s_{t+1}|a_t,s_t,\cdots,a_0,s_0)=p(s_{t+1}|s_t,a_t),$$`
 

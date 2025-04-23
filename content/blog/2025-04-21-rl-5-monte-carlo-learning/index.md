@@ -1,5 +1,5 @@
 ---
-title: '强化学习(5): 蒙特卡洛方法'
+title: '强化学习(5)：蒙特卡洛方法'
 author: Lingqi Zeng
 date: '2025-04-21'
 slug: rl-5-monte-carlo-learning

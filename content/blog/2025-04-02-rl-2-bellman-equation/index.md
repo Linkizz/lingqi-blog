@@ -1,5 +1,5 @@
 ---
-title: '强化学习(2): 贝尔曼公式'
+title: '强化学习(2)：贝尔曼公式'
 author: Lingqi Zeng
 date: '2025-04-02'
 slug: rl-2-bellman-equation
