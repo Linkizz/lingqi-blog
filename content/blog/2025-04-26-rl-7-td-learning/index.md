@@ -1,5 +1,5 @@
 ---
-title: 强化学习(7)：时序差分方法
+title: 强化学习 (7)：时序差分方法
 author: Lingqi Zeng
 date: '2025-04-26'
 slug: rl-7-TD-learning
@@ -14,7 +14,7 @@ tags: []
 
 之前介绍的蒙特卡洛学习方法每次更新时需要完整的采样episode，本节介绍的时序差分方法(Temporal Difference Learning)不需要完整的episode，只需要利用当前状态和下一状态的信息，是一种增量式model-free的算法。
 
-给定一个policy `$\pi$`，我们的目标是估计state value `$v_{\pi}(s), \forall s \in \mathcal{S}$`。根据policy `$\pi$`，我们得到一些采样数据`$(s_0,r_1,s_1,\cdots,s_t,r_{t+1},s_{t+1},\cdots)$`，TD算法估计state value的迭代公式为
+给定一个policy \(\pi\)，我们的目标是估计state value `$v_{\pi}(s), \forall s \in \mathcal{S}$`。根据policy `$\pi$`，我们得到一些采样数据`$(s_0,r_1,s_1,\cdots,s_t,r_{t+1},s_{t+1},\cdots)$`，TD算法估计state value的迭代公式为
 
 `$$\begin{equation}\label{eq:1}\begin{aligned}
 v_{t+1}(s_t)&=v_t(s_t)-\alpha_t(s_t)\left[v_t(s_t)-(r_{t+1}+\gamma v_t(s_{t+1}))\right], \\
